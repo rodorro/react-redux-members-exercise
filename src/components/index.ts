@@ -1,1 +1,1 @@
-export {MemberCollectionContainer as MembersAreaContainer} from './member-collection/member-collection.container';
+export { MemberCollectionContainer } from './member-collection/member-collection.container';

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { MembersAreaContainer } from './components';
+import { MemberCollectionContainer } from './components';
 
 export const App = () => {
   return (
     <div>
-      <MembersAreaContainer/>
+      <MemberCollectionContainer/>
     </div>
   );
 }
