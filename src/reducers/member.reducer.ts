@@ -1,7 +1,7 @@
 import {actionsEnums} from '../common/actionsEnums';
 import {MemberEntity} from '../model/member';
 
-export type memberState =  MemberEntity[];
+export type memberState = MemberEntity[];
 
 export const memberReducer =  (state : memberState = [], action) => {
   switch (action.type) {

@@ -22,6 +22,12 @@ export const MemberCollectionComponent = (props : Props) => {
     updateFilter(event.target.value);
   };
 
+  const handleMemberEdit = (id: number) => {
+    alert(id);
+    // const route = linkRoutes.memberEdit(id);
+    // history.push(route);
+  };
+
   return (
   <div className={classes.container}>
       <div className={classes.title}>
@@ -38,7 +44,7 @@ export const MemberCollectionComponent = (props : Props) => {
         </div>
       </div>
 
-      <MemberTableComponent members={members}/>
+      <MemberTableComponent members={members} onMemberEdit={handleMemberEdit}/>
   </div>
   );
 }

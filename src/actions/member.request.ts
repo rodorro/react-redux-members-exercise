@@ -14,14 +14,10 @@ export const memberRequest = (organization: string) => (dispatcher) => {
 
   promise.then(
     (data) => dispatcher(memberRequestCompleted(data))
+  )
+  .catch(
+    (error) => dispatcher(memberRequestCompleted([]))
   );
 
   return promise;
-}
-
-export const updateFilter = (organization: string) => {
-  return {
-    type: actionsEnums.UPDATE_FILTER,
-    payload: organization
-  }
 }

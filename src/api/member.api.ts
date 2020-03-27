@@ -10,7 +10,16 @@ class MemberAPI {
     .then((response) => this.checkStatus(response))
     .then((response) => this.parseJSON(response))
     .then((data) => this.resolveMembers(data))
-    }
+  }
+
+  getMember = (id: string): Promise<MemberEntity> => {
+    const gitHubMemberUrl: string = `https://api.github.com/user/${id}`;
+
+    return fetch(gitHubMemberUrl)
+        .then(response => this.checkStatus(response))
+        .then(response => this.parseJSON(response))
+        .then(data => this.resolveMember(data))
+  }      
 
   private checkStatus(response : Response) : Promise<Response> {
     if (response.status >= 200 && response.status < 300) {
@@ -40,6 +49,16 @@ class MemberAPI {
 
     return Promise.resolve(members);
   }
+
+  private resolveMember = (gitHubMember: MemberEntity): MemberEntity => {
+    var member: MemberEntity = createDefaultMemberEntity();
+  
+    member.id = gitHubMember.id;
+    member.login = gitHubMember.login;
+    member.avatar_url = gitHubMember.avatar_url;
+  
+    return member;
+  };
 }
 
 export const memberAPI = new MemberAPI();

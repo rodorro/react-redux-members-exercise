@@ -5,11 +5,14 @@ import { useStyles } from '../member-collection.component.style';
 
 interface Props {
     members: MemberEntity[];
+    onMemberEdit: (id: number) => void;
 }
 
 export const MemberTableComponent = (props: Props) => {
 
   const classes = useStyles({});
+
+  const { members, onMemberEdit } = props;
   
   return (
       <div className={classes.divTable} >
@@ -25,12 +28,15 @@ export const MemberTableComponent = (props: Props) => {
               <th>
                 Name
               </th>
+              <th>
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
             {
-                props.members.map((member: MemberEntity) =>
-                    <MemberRowComponent key={member.id} member={member}/>
+                members.map((member: MemberEntity) =>
+                    <MemberRowComponent key={member.id} member={member} onMemberEdit={onMemberEdit}/>
                 )
             }
           </tbody>
