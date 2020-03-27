@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { memberRequest } from '../../actions/memberRequest';
-import { MemberAreaComponent } from './memberArea';
+import { memberRequest } from '../../actions/member.request';
+import { MemberCollectionComponent } from './member-collection.component';
 import { State } from '../../reducers';
 
 const mapStateToProps = (state  :State) => {
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export const MembersAreaContainer = connect(
+export const MemberCollectionContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(MemberAreaComponent);
+)(MemberCollectionComponent);

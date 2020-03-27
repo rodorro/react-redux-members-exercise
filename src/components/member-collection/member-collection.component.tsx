@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {MemberTableComponent} from './components/memberTable';
+import {MemberTableComponent} from './components/member-table.component';
 import {MemberEntity} from '../../model/member'
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   loadMembers: () => any;
 }
 
-export const MemberAreaComponent = (props : Props) => {
+export const MemberCollectionComponent = (props : Props) => {
   return (
   <div>
       <MemberTableComponent members={props.members}/>

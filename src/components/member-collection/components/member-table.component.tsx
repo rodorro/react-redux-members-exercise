@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {MemberEntity} from '../../../model/member';
-import {MemberRowComponent} from './memberRow';
+import {MemberRowComponent} from './member-row.component';
 
 interface Props {
     members: MemberEntity[];

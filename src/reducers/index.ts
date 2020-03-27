@@ -1,5 +1,5 @@
 import { combineReducers} from 'redux';
-import { memberReducer, memberState } from './memberReducer';
+import { memberReducer, memberState } from './member.reducer';
 
 export interface State {  
   memberReducer : memberState;
