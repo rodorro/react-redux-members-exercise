@@ -1,16 +1,19 @@
 import * as React from 'react';
 import {MemberEntity} from '../../../model/member';
 import {MemberRowComponent} from './member-row.component';
+import { useStyles } from '../member-collection.component.style';
 
 interface Props {
     members: MemberEntity[];
 }
 
 export const MemberTableComponent = (props: Props) => {
+
+  const classes = useStyles({});
+  
   return (
-      <div className="row">
-        <h2> Members Page</h2>
-        <table className="table">
+      <div className={classes.divTable} >
+        <table className={classes.table}>
           <thead>
             <tr>
               <th>

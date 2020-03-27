@@ -3,6 +3,7 @@ import {MemberTableComponent} from './components/member-table.component';
 import {MemberEntity} from '../../model/member';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { useStyles } from './member-collection.component.style';
 
 interface Props {
   members: Array<MemberEntity>;
@@ -13,23 +14,25 @@ interface Props {
 
 export const MemberCollectionComponent = (props : Props) => {
 
+  const classes = useStyles({});
+  
   const { members, loadMembers, organization, updateFilter } = props;
 
-  // const [ organization, setOrganization ] = React.useState<string>('lemoncode');
-
   const updateOrganization = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // setOrganization(event.target.value);
     updateFilter(event.target.value);
   };
 
   return (
-  <div>
-      <div>
+  <div className={classes.container}>
+      <div className={classes.title}>
+        <h2> Members Page</h2>
+      </div>
+      <div className={classes.input}>
         <TextField id="standard-basic" label="Members" value={organization} 
           onChange={updateOrganization}/>
-        <div >
+        <div className={classes.button}>
           <Button variant="contained" size="small" color="primary" 
-            onClick={()=>loadMembers(organization)}>
+            className={classes.margin} onClick={()=>loadMembers(organization)}>
             Load
           </Button>
         </div>
