@@ -7,16 +7,19 @@ import Button from '@material-ui/core/Button';
 interface Props {
   members: Array<MemberEntity>;
   loadMembers: (organization: string) => any;
+  organization: string;
+  updateFilter: (organzation: string) => void;
 }
 
 export const MemberCollectionComponent = (props : Props) => {
 
-  const { members, loadMembers } = props;
+  const { members, loadMembers, organization, updateFilter } = props;
 
-  const [ organization, setOrganization ] = React.useState<string>('lemoncode');
+  // const [ organization, setOrganization ] = React.useState<string>('lemoncode');
 
   const updateOrganization = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setOrganization(event.target.value);
+    // setOrganization(event.target.value);
+    updateFilter(event.target.value);
   };
 
   return (

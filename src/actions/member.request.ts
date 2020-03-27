@@ -18,3 +18,10 @@ export const memberRequest = (organization: string) => (dispatcher) => {
 
   return promise;
 }
+
+export const updateFilter = (organization: string) => {
+  return {
+    type: actionsEnums.UPDATE_FILTER,
+    payload: organization
+  }
+}
