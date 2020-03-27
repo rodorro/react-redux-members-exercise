@@ -7,7 +7,7 @@ import { useStyles } from './member-collection.component.style';
 
 interface Props {
   members: Array<MemberEntity>;
-  loadMembers: (organization: string) => any;
+  loadMembers: (organization: string) => Promise<MemberEntity[]>;
   organization: string;
   updateFilter: (organzation: string) => void;
 }
