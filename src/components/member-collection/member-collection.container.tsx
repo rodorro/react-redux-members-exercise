@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { memberRequest } from '../../actions/member.request';
 import { updateFilter } from '../../actions/update.filter';
-import { memberEditRequest } from '../../actions/member-edit.request';
 import { MemberCollectionComponent } from './member-collection.component';
 import { State } from '../../reducers';
 
